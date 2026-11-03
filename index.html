@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steve Innovations | A John Stewart Company</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ghost-white': '#F8F8FF',
+            'pitch-black': '#000000'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Three.js & Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="antialiased">
+
+  <!-- 3D BACKGROUND -->
+  <div id="webgl-container"></div>
+
+  <!-- NAVIGATION -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <a href="#hero" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-white rounded-lg shadow-sm border border-gray-200 flex items-center justify-center overflow-hidden">
+          <img src="assets/images/logo.png" alt="Steve Innovations Logo" class="w-full h-full object-contain p-1" />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-lg tracking-wider leading-none text-black uppercase">STEVE INNOVATIONS</span>
+          <span class="text-[9px] tracking-widest text-black mt-1 uppercase font-semibold">A John Stewart Company</span>
+        </div>
+      </a>
+
+      <!-- Inside your navigation links in index.html -->
+<nav class="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-widest text-white uppercase">
+  <a href="#ecosystem" class="hover:text-gray-300 transition-colors">Ecosystem</a>
+  <a href="#pillars" class="hover:text-gray-300 transition-colors">Core Pillars</a>
+  <a href="#showcase" class="hover:text-gray-300 transition-colors">3D Showcase</a>
+  <a href="#leadership" class="hover:text-gray-300 transition-colors">Leadership</a>
+  <a href="#contact" class="hover:text-gray-300 transition-colors">Contact</a>
+</nav>
+
+      <a href="#contact" class="hidden md:inline-flex bg-ghost-white hover:bg-white text-black border border-gray-300 text-[10px] font-bold uppercase tracking-wider px-5 py-2.5 rounded transition items-center gap-2 shadow-sm">
+        Initiate Consultation <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 pb-16 bg-transparent">
+    <div class="relative z-10 text-center max-w-5xl mx-auto px-6">
+      
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm mb-8">
+        <span class="w-2 h-2 rounded-full bg-black animate-pulse"></span>
+        <span class="text-[10px] font-bold tracking-widest text-gray-600 uppercase">
+          Steve Innovations &mdash; A John Stewart Company
+        </span>
+      </div>
+
+      <h1 class="font-display font-bold text-6xl md:text-8xl tracking-tight text-black mb-4 uppercase">
+        STEVE INNOVATIONS
+      </h1>
+      
+      <p class="font-display italic text-2xl md:text-3xl text-black mb-8 font-medium">
+        "Intelligent Solutions. <span class="border-b-2 border-black not-italic font-bold">Infinite Dimensions.</span>"
+      </p>
+
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-10">
+        A multi-disciplinary operating enterprise under the <strong>John Stewart Company</strong>—bridging frontier artificial intelligence, autonomous robotics, photorealistic 3D visualization, and strategic retail & commercial modernization.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#pillars" class="w-full sm:w-auto bg-ghost-white border border-gray-300 hover:bg-white text-black px-8 py-4 rounded uppercase tracking-wider text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm">
+          Explore Core Pillars <i data-lucide="layers" class="w-4 h-4"></i>
+        </a>
+        <a href="#contact" class="w-full sm:w-auto bg-black hover:bg-gray-900 text-white px-8 py-4 rounded uppercase tracking-wider text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm">
+          Initiate Consultation <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE THREE CORE PILLARS -->
+  <section id="pillars" class="py-24 relative z-10 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black text-white text-[10px] font-bold uppercase tracking-widest mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-ghost-white"></span> BUILD &rarr; VISUALIZE &rarr; SCALE
+          </div>
+          <h2 class="font-display font-bold text-4xl md:text-5xl text-black">The Three Core Pillars</h2>
+        </div>
+        <p class="text-gray-700 max-w-sm text-sm leading-relaxed">
+          Three elevated operational divisions engineered with industrial precision to take enterprises from deep-tech R&D to market scale.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Pillar 1 -->
+        <div class="clean-card flex flex-col overflow-hidden">
+          <div class="h-48 relative overflow-hidden bg-gray-900">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80" alt="R&D" />
+            <div class="absolute top-3 left-3 bg-black text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">01 // BUILD</div>
+            <div class="absolute top-3 right-3 bg-ghost-white text-black w-7 h-7 rounded flex items-center justify-center"><i data-lucide="cpu" class="w-4 h-4"></i></div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display font-bold text-xl text-black mb-3">Frontier Engineering & R&D</h3>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">
+              Autonomous systems, custom computer vision pipelines, robotics simulation, and low-latency edge-AI interaction engineered for mission-critical environments.
+            </p>
+            <ul class="text-[11px] text-gray-600 font-mono space-y-2 mb-6 flex-1">
+              <li>&bull; Autonomous Systems & Robotics</li>
+              <li>&bull; Neural Computer Vision</li>
+              <li>&bull; Real-Time Edge-AI Hardware</li>
+            </ul>
+            <div class="border-t border-gray-200 pt-4 flex justify-between items-center text-[10px] font-bold tracking-widest uppercase">
+              <span class="text-gray-500">DIV // AI_ROBOTICS</span>
+              <a href="#contact" class="text-black hover:text-gray-500 flex items-center gap-1">INITIATE R&D <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="clean-card flex flex-col overflow-hidden">
+          <div class="h-48 relative overflow-hidden bg-gray-900">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80" alt="3D Visualization" />
+            <div class="absolute top-3 left-3 bg-black text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">02 // VISUALIZE</div>
+            <div class="absolute top-3 right-3 bg-ghost-white text-black w-7 h-7 rounded flex items-center justify-center"><i data-lucide="box" class="w-4 h-4"></i></div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display font-bold text-xl text-black mb-3">Spatial 3D Engineering</h3>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">
+              Photorealistic 3D product animations, precision virtual modeling, and interactive digital twins that transform industrial concepts into tangible visual authority.
+            </p>
+            <ul class="text-[11px] text-gray-600 font-mono space-y-2 mb-6 flex-1">
+              <li>&bull; Photorealistic 3D Animations</li>
+              <li>&bull; CAD-to-Cinema Virtual Modeling</li>
+              <li>&bull; Interactive WebGL Digital Twins</li>
+            </ul>
+            <div class="border-t border-gray-200 pt-4 flex justify-between items-center text-[10px] font-bold tracking-widest uppercase">
+              <span class="text-gray-500">DIV // SPATIAL_3D</span>
+              <a href="#contact" class="text-black hover:text-gray-500 flex items-center gap-1">COMMISSION 3D <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="clean-card flex flex-col overflow-hidden">
+          <div class="h-48 relative overflow-hidden bg-gray-900">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80" alt="Advisory" />
+            <div class="absolute top-3 left-3 bg-black text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">03 // SCALE</div>
+            <div class="absolute top-3 right-3 bg-ghost-white text-black w-7 h-7 rounded flex items-center justify-center"><i data-lucide="trending-up" class="w-4 h-4"></i></div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display font-bold text-xl text-black mb-3">Venture Modernization</h3>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">
+              End-to-end brand elevation, physical retail store turnarounds, and high-conviction commercial strategy tailored for startups and struggling businesses.
+            </p>
+            <ul class="text-[11px] text-gray-600 font-mono space-y-2 mb-6 flex-1">
+              <li>&bull; Brand Elevation & Identity</li>
+              <li>&bull; Physical Retail Turnarounds</li>
+              <li>&bull; Commercial Strategy for Startups</li>
+            </ul>
+            <div class="border-t border-gray-200 pt-4 flex justify-between items-center text-[10px] font-bold tracking-widest uppercase">
+              <span class="text-gray-500">DIV // ADVISORY</span>
+              <a href="#contact" class="text-black hover:text-gray-500 flex items-center gap-1">REQUEST AUDIT <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE 3D SHOWCASE -->
+<section id="showcase" class="py-24 relative z-10 bg-transparent">
+      <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="mb-10 flex flex-col md:flex-row justify-between items-end gap-4">
+        <div>
+          <h2 class="font-display font-bold text-4xl text-black">Interactive 3D Card Showcase</h2>
+          <p class="text-gray-700 mt-2 text-sm max-w-lg">Move your cursor across any card to engage real-time 3D perspective tilt, or slide horizontally through our practical engineering and commercial capabilities.</p>
+        </div>
+        <div class="flex gap-2">
+          <button id="scroll-left" class="w-10 h-10 border border-gray-400 rounded bg-white text-black hover:border-black transition flex items-center justify-center"><i data-lucide="chevron-left"></i></button>
+          <button id="scroll-right" class="w-10 h-10 border border-gray-400 rounded bg-white text-black hover:border-black transition flex items-center justify-center"><i data-lucide="chevron-right"></i></button>
+        </div>
+      </div>
+
+      <div id="showcase-track" class="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-8">
+        
+        <!-- Showcase 1 -->
+        <div class="min-w-[90%] md:min-w-[45%] lg:min-w-[40%] snap-start clean-card overflow-hidden">
+          <div class="h-56 relative bg-gray-900">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-70" />
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="bg-ghost-white text-black border border-gray-300 text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded">CAPABILITY // 01</span>
+              <span class="bg-black text-white text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded">VLA-ROBOTICS</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex justify-between text-white text-[10px] font-mono tracking-widest uppercase">
+              <span>LATENCY: &lt;12ms EDGE</span>
+              <span>DOF: 6-AXIS / HUMANOID</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-bold text-2xl text-black mb-2">Vision-Language-Action Robotics</h3>
+            <p class="text-sm text-gray-700 mb-6">Embodied multimodal AI agents that interpret natural commands, perceive complex 3D workspaces, and execute dexterous physical manipulation tasks autonomously.</p>
+            <div class="border-t border-gray-200 pt-4 flex justify-between text-[10px] font-bold tracking-widest uppercase">
+              <span class="text-gray-500">PyTorch &bull; ROS2 &bull; Isaac Sim</span>
+              <a href="#contact" class="text-black hover:text-gray-500">DEPLOY &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase 2 -->
+        <div class="min-w-[90%] md:min-w-[45%] lg:min-w-[40%] snap-start clean-card overflow-hidden">
+          <div class="h-56 relative bg-gray-900">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-70" />
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="bg-ghost-white text-black border border-gray-300 text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded">CAPABILITY // 02</span>
+              <span class="bg-black text-white text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded">NEURAL-VISION</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex justify-between text-white text-[10px] font-mono tracking-widest uppercase">
+              <span>PRECISION: 99.4% mAP</span>
+              <span>STREAM: MULTI-CAM 120FPS</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-bold text-2xl text-black mb-2">Autonomous Computer Vision</h3>
+            <p class="text-sm text-gray-700 mb-6">High-speed visual inspection pipelines, spatial customer analytics, and real-time defect tracking deployed on edge hardware across industrial spaces.</p>
+            <div class="border-t border-gray-200 pt-4 flex justify-between text-[10px] font-bold tracking-widest uppercase">
+              <span class="text-gray-500">TensorRT &bull; OpenCV &bull; Edge NPU</span>
+              <a href="#contact" class="text-black hover:text-gray-500">DEPLOY &rarr;</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Showcase 3 -->
+        <div class="min-w-[90%] md:min-w-[45%] lg:min-w-[40%] snap-start clean-card overflow-hidden">
+          <div class="h-56 relative bg-gray-900">
+            <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-70" />
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="bg-ghost-white text-black border border-gray-300 text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded">CAPABILITY // 03</span>
+              <span class="bg-black text-white text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded">SPATIAL-3D</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex justify-between text-white text-[10px] font-mono tracking-widest uppercase">
+              <span>RENDER: RAY-TRACED 8K</span>
+              <span>ENGINE: UNREAL / WEBGL</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-bold text-2xl text-black mb-2">Cinematic 3D Visualization</h3>
+            <p class="text-sm text-gray-700 mb-6">Luxury-grade 3D product reveals, interactive digital twins, and exploded architectural cutaways engineered for product launches and investor presentations.</p>
+            <div class="border-t border-gray-200 pt-4 flex justify-between text-[10px] font-bold tracking-widest uppercase">
+              <span class="text-gray-500">Blender &bull; Unreal 5 &bull; Three.js</span>
+              <a href="#contact" class="text-black hover:text-gray-500">DEPLOY &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP SECTION -->
+<section id="leadership" class="py-24 relative z-10 bg-transparent">
+      <div class="max-w-5xl mx-auto px-6">
+      
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-black text-white text-[9px] font-bold uppercase tracking-widest mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-ghost-white mr-2"></span> EXECUTIVE GOVERNANCE
+        </div>
+        <h2 class="font-display font-bold text-4xl md:text-5xl text-black mb-4">Executive Leadership</h2>
+        <p class="text-gray-700 text-sm max-w-2xl mx-auto leading-relaxed">
+          Guided by interdisciplinary mastery in Artificial Intelligence, Data Analytics, Electronics & Communication Science, and Corporate Law.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- CEO -->
+        <div class="clean-card p-8 border-t-4 border-t-black">
+          <div class="flex items-start gap-5 border-b border-gray-200 pb-6 mb-6">
+            <div class="w-20 h-24 bg-gray-200 border border-gray-300 rounded-lg flex flex-col items-center justify-center relative">
+              <div class="absolute -top-2 z-10 bg-ghost-white text-black border border-gray-300 text-[8px] font-bold uppercase tracking-widest px-2 py-0.5 rounded">FOUNDER</div>
+              <img src="assets/images/john.jpg" alt="John Stewart" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <div>
+              <div class="bg-black text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded inline-block mb-2">EXECUTIVE CHAIR & CEO</div>
+              <h3 class="font-display font-bold text-3xl text-black">John Stewart</h3>
+              <p class="text-xs text-gray-700 font-semibold mt-1">Founder, Chairman & Chief Executive Officer (CEO)</p>
+              <p class="text-[10px] text-gray-500 font-mono mt-1 uppercase">Steve Innovations &mdash; A John Stewart Company</p>
+            </div>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
+            <div class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3 flex items-center gap-2">
+              <i data-lucide="graduation-cap" class="w-4 h-4 text-black"></i> ACADEMIC BACKGROUND
+            </div>
+            <div class="flex items-start gap-2 mb-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-black mt-1"></span>
+              <div>
+                <div class="text-sm font-bold text-black">M.Sc. in Artificial Intelligence & Data Analytics</div>
+                <div class="text-[10px] text-gray-600 font-mono mt-0.5">Hindustan Institute of Technology & Science</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-400 mt-1"></span>
+              <div>
+                <div class="text-sm font-bold text-black">B.Sc. in Electronics & Communication Science</div>
+                <div class="text-[10px] text-gray-600 font-mono mt-0.5">SRM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CLO -->
+        <div class="clean-card p-8 border-t-4 border-t-black">
+          <div class="flex items-start gap-5 border-b border-gray-200 pb-6 mb-6">
+            <div class="w-20 h-24 bg-gray-200 border border-gray-300 rounded-lg flex flex-col items-center justify-center relative">
+              <div class="absolute -top-2 z-10 bg-ghost-white text-black border border-gray-300 text-[8px] font-bold uppercase tracking-widest px-2 py-0.5 rounded">CLO</div>
+              <img src="assets/images/naveen.jpg" alt="Naveen N" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <div>
+              <div class="bg-black text-white text-[8px] font-bold uppercase tracking-widest px-2 py-1 rounded inline-block mb-2">LEGAL & REGULATORY COMMAND</div>
+              <h3 class="font-display font-bold text-3xl text-black">Naveen N</h3>
+              <p class="text-xs text-gray-700 font-semibold mt-1">Chief Legal Officer (CLO) & General Counsel</p>
+              <p class="text-[10px] text-gray-500 font-mono mt-1 uppercase">Steve Innovations &mdash; A John Stewart Company</p>
+            </div>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
+            <div class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3 flex items-center gap-2">
+              <i data-lucide="graduation-cap" class="w-4 h-4 text-black"></i> ACADEMIC BACKGROUND
+            </div>
+            <div class="flex items-start gap-2 mb-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-black mt-1"></span>
+              <div>
+                <div class="text-sm font-bold text-black">M.Sc. in Artificial Intelligence & Data Analytics</div>
+                <div class="text-[10px] text-gray-600 font-mono mt-0.5">Hindustan Institute of Technology & Science</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-400 mt-1"></span>
+              <div>
+                <div class="text-sm font-bold text-black">B.Sc. in Electronics & Communication Science</div>
+                <div class="text-[10px] text-gray-600 font-mono mt-0.5">SRM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTAKE FORM -->
+<section id="contact" class="py-24 relative z-10 bg-transparent">
+      <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <div class="lg:col-span-5">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-black text-white text-[9px] font-bold uppercase tracking-widest mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-ghost-white mr-2"></span> DIRECT ADVISORY DISPATCH
+          </div>
+          <h2 class="font-display font-bold text-4xl md:text-5xl text-black mb-4">Initiate a Project or Strategic Audit</h2>
+          <p class="text-gray-700 text-sm leading-relaxed mb-8">
+            Direct communication channel for startups, industrial R&D inquiries, 3D spatial commissions, and retail or enterprise revitalization.
+          </p>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm space-y-6">
+            <div class="flex items-center justify-between border-b border-gray-200 pb-3 text-[10px] font-bold text-gray-600 uppercase tracking-widest">
+              <span>Executive Desk</span>
+              <span class="text-black flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-black animate-pulse"></span> LIVE DISPATCH</span>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white"><i data-lucide="mail" class="w-4 h-4"></i></div>
+              <div>
+                <div class="font-mono text-[9px] text-gray-500 uppercase tracking-widest mb-0.5">Executive Email</div>
+                <a href="mailto:steveatwork77@gmail.com" class="font-mono text-sm text-black font-bold hover:text-gray-500">steveatwork77@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white"><i data-lucide="phone" class="w-4 h-4"></i></div>
+              <div>
+                <div class="font-mono text-[9px] text-gray-500 uppercase tracking-widest mb-0.5">Direct Executive Lines</div>
+                <div class="font-mono text-sm text-black font-bold">+91 733 874 2831</div>
+                <div class="font-mono text-sm text-black font-bold">+91 909 541 6667</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="clean-card p-8">
+            <div class="flex justify-between text-[10px] font-bold text-black uppercase tracking-widest mb-6 border-b border-gray-200 pb-4">
+              <span>INTAKE PROTOCOL // STEVE INNOVATIONS</span>
+              <span class="text-gray-500">LIVE EMAIL BACKEND</span>
+            </div>
+
+                <form action="https://formspree.io/f/mkjjpdka" method="POST" class="space-y-6">              
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block font-mono text-[10px] text-black uppercase tracking-widest mb-2 font-bold">Name <span class="text-black">*</span></label>
+                  <input type="text" name="Name" required placeholder="Enter your full name" class="w-full p-3 rounded bg-white border border-gray-300 text-sm focus:outline-none focus:border-black" />
+                </div>
+                <div>
+                  <label class="block font-mono text-[10px] text-black uppercase tracking-widest mb-2 font-bold">Email Address <span class="text-black">*</span></label>
+                  <input type="email" name="Email" required placeholder="name@company.com" class="w-full p-3 rounded bg-white border border-gray-300 text-sm focus:outline-none focus:border-black" />
+                </div>
+              </div>
+              
+              <div>
+                <label class="block font-mono text-[10px] text-black uppercase tracking-widest mb-2 font-bold">Phone Number <span class="text-black">*</span></label>
+                <input type="text" name="Phone" required placeholder="+91 98765 43210" class="w-full p-3 rounded bg-white border border-gray-300 text-sm focus:outline-none focus:border-black" />
+              </div>
+
+              <div>
+                <label class="block font-mono text-[10px] text-black uppercase tracking-widest mb-2 font-bold">Engagement Pillar</label>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                  
+                  <div>
+                    <input type="radio" id="pillar-1" name="cat" value="Research & Development" class="hidden peer" required />
+                    <label for="pillar-1" class="border border-gray-300 p-2 text-center rounded text-[11px] font-mono cursor-pointer hover:border-black peer-checked:bg-black peer-checked:text-white peer-checked:border-black transition block">
+                      Research & Development
+                    </label>
+                  </div>
+                  
+                  <div>
+                    <input type="radio" id="pillar-2" name="cat" value="Software Related" class="hidden peer" />
+                    <label for="pillar-2" class="border border-gray-300 p-2 text-center rounded text-[11px] font-mono cursor-pointer hover:border-black peer-checked:bg-black peer-checked:text-white peer-checked:border-black transition block">
+                      Software Related
+                    </label>
+                  </div>
+                  
+                  <div>
+                    <input type="radio" id="pillar-3" name="cat" value="Marketing & Analytics" class="hidden peer" />
+                    <label for="pillar-3" class="border border-gray-300 p-2 text-center rounded text-[11px] font-mono cursor-pointer hover:border-black peer-checked:bg-black peer-checked:text-white peer-checked:border-black transition block h-full flex items-center justify-center leading-tight">
+                      Marketing & Analytics Support
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-mono text-[10px] text-black uppercase tracking-widest mb-2 font-bold">Requirement Overview <span class="text-black">*</span></label>
+                <textarea name="Message" rows="4" required placeholder="Outline your project goals, technical scope, 3D visualization needs, or business turnaround objectives..." class="w-full p-3 rounded bg-white border border-gray-300 text-sm focus:outline-none focus:border-black"></textarea>
+              </div>
+
+              <button type="submit" class="w-full bg-ghost-white border border-gray-300 hover:bg-white text-black font-display font-bold py-4 rounded uppercase tracking-wider text-sm flex justify-center items-center gap-2 transition shadow-sm">
+                Submit Consultation Brief <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-16 relative z-10">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-gray-800 pb-10">
+        
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-ghost-white rounded flex items-center justify-center overflow-hidden">
+              <img src="assets/images/logo.png" alt="Steve Innovations Logo" class="w-full h-full object-contain p-1" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display font-bold text-lg tracking-wider leading-none uppercase">STEVE INNOVATIONS</span>
+              <span class="text-[8px] tracking-widest text-gray-500 mt-1 uppercase font-semibold">A John Stewart Company</span>
+            </div>
+          </div>
+          <p class="font-display italic text-gray-300 mb-4">"Intelligent Solutions. Infinite Dimensions."</p>
+          <p class="text-[11px] text-gray-500 font-sans max-w-xs leading-relaxed">
+            Operating enterprise under the <strong>John Stewart Company</strong>—delivering frontier AI & robotics engineering, photorealistic 3D spatial visualization, and commercial venture & retail modernization.
+          </p>
+        </div>
+
+        <div class="font-mono text-xs space-y-3">
+          <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-4">Enterprise Navigation</div>
+          <div><a href="#hero" class="text-gray-600 hover:text-ghost-white transition">Interactive 3D Stage</a></div>
+          <div><a href="#pillars" class="text-gray-600 hover:text-ghost-white transition">Core Pillars (Build &rarr; Scale)</a></div>
+          <div><a href="#showcase" class="text-gray-600 hover:text-ghost-white transition">3D Card Showcase</a></div>
+          <div><a href="#leadership" class="text-gray-600 hover:text-ghost-white transition">Executive Leadership</a></div>
+          <div><a href="#contact" class="text-ghost-white font-bold hover:text-gray-400 transition">Initiate Consultation &rarr;</a></div>
+        </div>
+
+        <div class="font-mono text-xs space-y-3">
+          <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-4">Executive Coordinates</div>
+          <div class="flex items-center gap-3"><i data-lucide="mail" class="w-4 h-4 text-ghost-white"></i> steveatwork77@gmail.com</div>
+          <div class="flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4 text-ghost-white"></i> +91 733 874 2831</div>
+          <div class="flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4 text-ghost-white"></i> +91 909 541 6667</div>
+        </div>
+
+      </div>
+
+      <div class="mt-8 font-mono text-[9px] text-gray-600 flex flex-col md:flex-row justify-between uppercase tracking-widest gap-4">
+        <span>&copy; 2026 Steve Innovations &mdash; A John Stewart Company. All rights reserved.</span>
+        <span>CANONICAL // STEVEINNOVATIONS.COM</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External JS -->
+  <script src="js/main.js"></script>
+  <script src="js/three-setup.js"></script>
+</body>
+</html>
